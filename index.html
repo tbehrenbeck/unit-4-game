@@ -8,14 +8,16 @@
   <!-- Bootstrap File -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-  <!--Javascript File-->
-  <script src="assets/javascript/game.js"></script>
-
   <!--CSS File-->
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <!--Javascript File-->
+  <script src="assets/javascript/game.js"></script>
 
 </head>
 
@@ -53,7 +55,7 @@
             <div class="card-body">
               <h5 class="card-title text-center">Target</h5>
               <hr>
-              <p class="card-text text-center">target goal number goes here</p>
+              <p id="target-score" class="card-text text-center"></p>
             </div>
             <div id="fillerSpace" style="padding: 5px"></div>
           </div>
@@ -61,7 +63,7 @@
             <div class="card-body">
               <h5 class="card-title text-center">Total Score</h5>
               <hr>
-              <p class="card-text text-center">user points go here</p>
+              <p id="points" class="card-text text-center"></p>
             </div>
             <div id="fillerSpace" style="padding: 5px"></div>
           </div>
@@ -72,10 +74,10 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <img src="assets/images/crystal.png" style="max-width: 120px;" alt="crystal1" value="1">
-              <img src="assets/images/crystal2.png" style="max-width: 130px;" alt="crystal1" value="2">
-              <img src="assets/images/crystal3.jpeg" style="max-width: 120px;" alt="crystal1" value="3">
-              <img src="assets/images/crystal4.png" style="max-width: 110px;" alt="crystal1" value="4">
+              <img id="crystal1" src="assets/images/crystal.png" style="max-width: 120px;" alt="crystal1"> 
+              <img id="crystal2" src="assets/images/crystal2.png" style="max-width: 130px;" alt="crystal2">
+              <img id="crystal3" src="assets/images/crystal3.jpeg" style="max-width: 120px;" alt="crystal3">
+              <img id="crystal4" src="assets/images/crystal4.png" style="max-width: 110px;" alt="crystal4">
             </div>
           </div>
         </div>
@@ -86,7 +88,7 @@
                 <div class="card-body">
                   <h5 class="card-title text-center">Wins:</h5>
                   <hr>
-                  <p class="card-text text-center">user wins</p>
+                  <p id="winning" class="card-text text-center">user wins</p>
                 </div>
                 <div id="fillerSpace" style="padding: 26px"></div>
               </div>
@@ -96,7 +98,7 @@
                 <div class="card-body">
                   <h5 class="card-title text-center">Losses:</h5>
                   <hr>
-                  <p class="card-text text-center">user losses</p>
+                  <p id="losing" class="card-text text-center">user losses</p>
                 </div>
                 <div id="fillerSpace" style="padding: 26px"></div>
               </div>
@@ -106,6 +108,7 @@
       </div>
     </div>
   </div>
+  
 
 
 </body>
