@@ -27,7 +27,7 @@
   <div class="container">
 
     <!-- Jumbotron with Title -->
-    <div class="jumbotron">
+    <div class="jumbotron border border-dark">
       <h1 class="text-center">
         <strong>Crystal Collector</strong>
       </h1>
@@ -55,17 +55,15 @@
             <div class="card-body">
               <h5 class="card-title text-center">Target</h5>
               <hr>
-              <p id="target-score" class="card-text text-center"></p>
+              <p id="target-score" class="card-text text-center numeral"></p>
             </div>
-            <div id="fillerSpace" style="padding: 5px"></div>
           </div>
-          <div class="card" style="margin-top: 25px;">
+          <div class="card text" style="margin-top: 25px;">
             <div class="card-body">
               <h5 class="card-title text-center">Total Score</h5>
               <hr>
-              <p id="points" class="card-text text-center"></p>
+              <p id="points" class="card-text text-center numeral"></p>
             </div>
-            <div id="fillerSpace" style="padding: 5px"></div>
           </div>
         </div>
       </div>
@@ -74,10 +72,10 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <img id="crystal1" src="assets/images/crystal.png" style="max-width: 120px;" alt="crystal1"> 
-              <img id="crystal2" src="assets/images/crystal2.png" style="max-width: 130px;" alt="crystal2">
-              <img id="crystal3" src="assets/images/crystal3.jpeg" style="max-width: 120px;" alt="crystal3">
-              <img id="crystal4" src="assets/images/crystal4.png" style="max-width: 110px;" alt="crystal4">
+              <img id="crystal1" class="button" src="assets/images/crystal.png" style="max-width: 120px;" alt="crystal1"> 
+              <img id="crystal2" class="button" src="assets/images/crystal2.png" style="max-width: 130px;" alt="crystal2">
+              <img id="crystal3" class="button" src="assets/images/crystal3.jpeg" style="max-width: 120px;" alt="crystal3">
+              <img id="crystal4" class="button" src="assets/images/crystal4.png" style="max-width: 110px;" alt="crystal4">
             </div>
           </div>
         </div>
@@ -88,7 +86,7 @@
                 <div class="card-body">
                   <h5 class="card-title text-center">Wins:</h5>
                   <hr>
-                  <p id="winning" class="card-text text-center"></p>
+                  <p id="winning" class="card-text text-center numeral"></p>
                 </div>
                 <div id="fillerSpace" style="padding: 26px"></div>
               </div>
@@ -98,7 +96,7 @@
                 <div class="card-body">
                   <h5 class="card-title text-center">Losses:</h5>
                   <hr>
-                  <p id="losing" class="card-text text-center"></p>
+                  <p id="losing" class="card-text text-center numeral"></p>
                 </div>
                 <div id="fillerSpace" style="padding: 26px"></div>
               </div>
