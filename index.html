@@ -3,13 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Captain Planet: The Game</title>
+  <title>Unit-4-Project</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Bootstrap File -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
   <!--Javascript File-->
   <script src="assets/javascript/game.js"></script>
+
+  <!--CSS File-->
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -29,6 +32,8 @@
       <hr>
     </div>
 
+    
+
     <!-- <div class="row"> -->
 
       <div class="row">
@@ -37,21 +42,28 @@
             <div class="card-body">
               <h5 class="card-title">Instructions</h5>
                 <hr>
-                <p id="card-text">You will be given a random number at the start of the game.</p>
-                <p id="card-text">By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                <p id="card-text">You will be given a random target number at the start of the game. By clicking on a crystal you will add a specific amount of points to your total score.</p>
                 <p id="card-text">To win, your total score must match the randomly generated number. If you go over this amount, you lose.</p>
                 <p id="card-text">Each time the game restarts, the value of each crystal will change.</p>
-              
             </div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title text-center">Target</h5>
+              <hr>
+              <p class="card-text text-center">target goal number goes here</p>
             </div>
+            <div id="fillerSpace" style="padding: 5px"></div>
+          </div>
+          <div class="card" style="margin-top: 25px;">
+            <div class="card-body">
+              <h5 class="card-title text-center">Total Score</h5>
+              <hr>
+              <p class="card-text text-center">user points go here</p>
+            </div>
+            <div id="fillerSpace" style="padding: 5px"></div>
           </div>
         </div>
       </div>
@@ -60,19 +72,34 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <img src="assets/images/crystal.png" style="max-width: 120px;" alt="crystal1" value="1">
+              <img src="assets/images/crystal2.png" style="max-width: 130px;" alt="crystal1" value="2">
+              <img src="assets/images/crystal3.jpeg" style="max-width: 120px;" alt="crystal1" value="3">
+              <img src="assets/images/crystal4.png" style="max-width: 110px;" alt="crystal1" value="4">
             </div>
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Wins:</h5>
+                  <hr>
+                  <p class="card-text text-center">user wins</p>
+                </div>
+                <div id="fillerSpace" style="padding: 26px"></div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Losses:</h5>
+                  <hr>
+                  <p class="card-text text-center">user losses</p>
+                </div>
+                <div id="fillerSpace" style="padding: 26px"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -80,92 +107,6 @@
     </div>
   </div>
 
-  <script>
-
-  // JavaScript function that wraps everything
-  $(document).ready(function() {
-
-    var captainPlanet = $(".captain-planet");
-
-    // Gets Link for Theme Song
-    var audioElement = document.createElement("audio");
-    audioElement.setAttribute("src", "Assets/captainplanet24.mp3");
-
-    // Theme Button
-    $(".theme-button").on("click", function() {
-      audioElement.play();
-    });
-    $(".pause-button").on("click", function() {
-      audioElement.pause();
-    });
-
-    // Size Buttons
-    $(".normal-button").on("click", function() {
-      captainPlanet.animate({ height: "300px" });
-    });
-    $(".grow-button").on("click", function() {
-      captainPlanet.animate({ height: "500px" });
-    });
-    $(".shrink-button").on("click", function() {
-      captainPlanet.animate({ height: "100px" });
-    });
-
-    // Visibility Buttons
-    $(".vis-button").on("click", function() {
-      captainPlanet.animate({ opacity: "1" });
-    });
-    $(".invis-button").on("click", function() {
-      captainPlanet.animate({ opacity: "0.05" });
-    });
-
-    // Move Buttons
-    $(".up-button").on("click", function() {
-      captainPlanet.animate({ top: "-=200px" }, "normal");
-    });
-    $(".down-button").on("click", function() {
-      captainPlanet.animate({ top: "+=200px" }, "normal");
-    });
-    $(".left-button").on("click", function() {
-      captainPlanet.animate({ left: "-=200px" }, "normal");
-    });
-    $(".right-button").on("click", function() {
-      captainPlanet.animate({ left: "+=200px" }, "normal");
-    });
-    $(".back-button").on("click", function() {
-      captainPlanet.animate({ top: "50px", left: "80px" }, "fast");
-    });
-
-    // Keyboard move controls
-    $(document).keyup(function(e) {
-      switch (e.which) {
-
-      // Move Buttons (Keyboard Down)
-      case 40:
-        captainPlanet.animate({ top: "+=200px" }, "normal");
-        break;
-
-        // Move Buttons (Keyboard Right)
-      case 39:
-        captainPlanet.animate({ left: "+=200px" }, "normal");
-        break;
-
-        // Move Buttons (Keyboard Up)
-      case 38:
-        captainPlanet.animate({ top: "-=200px" }, "normal");
-        break;
-
-        // Move Buttons (Keyboard Left)
-      case 37:
-        captainPlanet.animate({ left: "-=200px" }, "normal");
-        break;
-
-      default:
-        break;
-      }
-    });
-  });
-
-  </script>
 
 </body>
 </html>
