@@ -25,30 +25,36 @@ $(document).ready(function() {
       $("#target-score").text(randomNumber);
     }
 
-    function reset() {
-        randomStart();
-        $("#target-score").text(randomNumber);
-        var pointTotal = 0;
-        $("#points").text(pointTotal);
-        crystal1 = Math.floor(Math.random() * 12) + 1;
-        crystal2 = Math.floor(Math.random() * 12) + 1;
-        crystal3 = Math.floor(Math.random() * 12) + 1;
-        crystal4 = Math.floor(Math.random() * 12) + 1;
-    }
-
+   
     //calculating wins/ losses
     function winLose() {
         if (pointTotal === randomNumber) {
             win++
+            alert("You won! Click OK to play again.")
             $("#winning").text(win);
             reset();
         } 
         else if (pointTotal > randomNumber) {
             lose++
+            alert("Better luck next time. Click OK to play again!")
             $("#losing").text(lose);
             reset();
         }
-    } 
+    }
+
+    function reset() {
+        randomNumber =0;
+        pointTotal = 0;
+        $("#target-score").text(randomNumber);
+        $("#points").text(pointTotal);
+        crystal1 = Math.floor(Math.random() * 12) + 1;
+        crystal2 = Math.floor(Math.random() * 12) + 1;
+        crystal3 = Math.floor(Math.random() * 12) + 1;
+        crystal4 = Math.floor(Math.random() * 12) + 1;
+        randomStart();
+    }
+       
+     
     
 
 //---------Main Process--------    
@@ -80,7 +86,6 @@ $(document).ready(function() {
         winLose();
     })
 
- 
 
 });
 
