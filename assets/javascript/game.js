@@ -8,8 +8,8 @@
 
 var randomNumber = 0;
 var pointTotal = 0;
-// var win = 0;
-// var lose = 0;
+var win = 0;
+var lose = 0;
 var crystal1 = Math.floor(Math.random() * 12) + 1;
 var crystal2 = Math.floor(Math.random() * 12) + 1;
 var crystal3 = Math.floor(Math.random() * 12) + 1;
@@ -21,9 +21,34 @@ $(document).ready(function() {
 
     //set target number
     function randomStart() {
-      var randomNumber = Math.floor(Math.random() * 120) + 19;
+      randomNumber = Math.floor(Math.random() * 120) + 19;
       $("#target-score").text(randomNumber);
     }
+
+    function reset() {
+        randomStart();
+        $("#target-score").text(randomNumber);
+        var pointTotal = 0;
+        $("#points").text(pointTotal);
+        crystal1 = Math.floor(Math.random() * 12) + 1;
+        crystal2 = Math.floor(Math.random() * 12) + 1;
+        crystal3 = Math.floor(Math.random() * 12) + 1;
+        crystal4 = Math.floor(Math.random() * 12) + 1;
+    }
+
+    //calculating wins/ losses
+    function winLose() {
+        if (pointTotal === randomNumber) {
+            win++
+            $("#winning").text(win);
+            reset();
+        } 
+        else if (pointTotal > randomNumber) {
+            lose++
+            $("#losing").text(lose);
+            reset();
+        }
+    } 
     
 
 //---------Main Process--------    
@@ -33,27 +58,29 @@ $(document).ready(function() {
     $("#crystal1").on("click", function (){
         pointTotal += crystal1;
         console.log("Crystal 1 is worth: " + crystal1 + " & total score is: " + pointTotal)
-        $("#points").text(pointTotal); 
+        $("#points").text(pointTotal);
+        winLose();
     })
-
     $("#crystal2").on("click", function (){
         pointTotal += crystal2;
         console.log("Crystal 2 is worth: " + crystal2 + " & total score is: " + pointTotal)
         $("#points").text(pointTotal);
+        winLose();
     })
     $("#crystal3").on("click", function (){
         pointTotal += crystal3;
         console.log("Crystal 3 is worth: " + crystal3 + " & total score is: " + pointTotal)
         $("#points").text(pointTotal);
+        winLose();
     })
     $("#crystal4").on("click", function (){
         pointTotal += crystal4;
         console.log("Crystal 4 is worth: " + crystal4 + " & total score is: " + pointTotal)
         $("#points").text(pointTotal);
+        winLose();
     })
 
-    // if (pointTotal === randomNumber) {
-    //     console.log("you win");
-    // } 
+ 
 
 });
+
